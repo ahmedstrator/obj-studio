@@ -243,20 +243,10 @@ displayOrder.forEach((title, index) => {
     }
 
     discoveredFiles.forEach(file => {
-      let mediaUrl = `/scratch-media/${matchedFolder}/${file.relativePath}`;
-
-      if (isProduction) {
-        const destFilePath = path.join(mediaDestDir, file.relativePath);
-        const destSubDir = path.dirname(destFilePath);
-        if (!fs.existsSync(destSubDir)) {
-          fs.mkdirSync(destSubDir, { recursive: true });
-        }
-        // Copy file for production output only if not present
-        if (!fs.existsSync(destFilePath)) {
-          fs.copyFileSync(file.fullPath, destFilePath);
-        }
-        mediaUrl = `/media/${matchedFolder}/${file.relativePath}`;
-      }
+      const R2_BASE_URL = 'https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev';
+      const encodedFolder = encodeURIComponent(matchedFolder);
+      const encodedRelPath = file.relativePath.split('/').map(encodeURIComponent).join('/');
+      const mediaUrl = `${R2_BASE_URL}/${encodedFolder}/${encodedRelPath}`;
 
       mediaItems.push({
         id: `${matchedFolder}-${file.relativePath}`,
