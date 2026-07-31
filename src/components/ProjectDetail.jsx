@@ -348,8 +348,6 @@ function ProjectMediaItem({
               muted
               playsInline
               loop
-              autoPlay
-              preload="auto"
               style={{
                 width: '100%',
                 height: '100%',
