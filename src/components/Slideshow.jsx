@@ -125,8 +125,8 @@ export default function Slideshow({
       {projects.map((project, index) => {
         const isActive = index === currentIndex;
         const isPast = index < currentIndex;
-        const isFuture = index > currentIndex;
-        const isMountedVideo = isActive;
+        const offset = index - currentIndex;
+        const isMountedVideo = Math.abs(offset) <= 1;
 
         if (Math.abs(offset) > 2) return null;
 

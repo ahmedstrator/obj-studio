@@ -47,6 +47,8 @@ export default function ProjectSlide({
     }
   }, [coverMedia]);
 
+  const fallbackImage = mediaList.find((m) => m.type === 'image');
+
   return (
     <div
       onClick={onOpen}
@@ -78,6 +80,23 @@ export default function ProjectSlide({
           backgroundColor: '#050505'
         }}
       >
+        {/* Render fallback poster image if available so screen is never black */}
+        {fallbackImage && (
+          <img
+            src={fallbackImage.url}
+            alt={project.title}
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              zIndex: 1
+            }}
+          />
+        )}
+
         {coverMedia && coverMedia.type === 'video' ? (
           isMountedVideo ? (
             <video
@@ -86,21 +105,24 @@ export default function ProjectSlide({
               muted
               playsInline
               loop
-              preload="metadata"
+              autoPlay
+              preload="auto"
               style={{
+                position: 'relative',
+                zIndex: 2,
                 width: '100%',
                 height: '100%',
                 objectFit: 'cover',
-                backgroundColor: '#050505',
+                backgroundColor: 'transparent',
                 willChange: 'transform'
               }}
             />
-          ) : (
-            <div style={{ width: '100%', height: '100%', backgroundColor: '#050505' }} />
-          )
+          ) : null
         ) : coverMedia && coverMedia.type === 'image' ? (
           <div
             style={{
+              position: 'relative',
+              zIndex: 2,
               width: '100%',
               height: '100%',
               overflow: 'hidden',
