@@ -147,54 +147,6 @@ export default function ProjectSlide({
         />
       </div>
 
-      {/* Floating Center Interactive Hover Pill */}
-      <div
-        style={{
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: isHovered
-            ? 'translate(-50%, -50%) scale(1)'
-            : 'translate(-50%, -40%) scale(0.92)',
-          opacity: isHovered ? 1 : 0,
-          transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
-          zIndex: 25,
-          pointerEvents: 'none',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '10px',
-          padding: '12px 24px',
-          borderRadius: '100px',
-          backgroundColor: 'rgba(5, 5, 5, 0.75)',
-          backdropFilter: 'blur(16px)',
-          WebkitBackdropFilter: 'blur(16px)',
-          border: '1px solid rgba(255, 255, 255, 0.28)',
-          boxShadow: '0 20px 45px rgba(0, 0, 0, 0.6)'
-        }}
-      >
-        <span
-          style={{
-            fontSize: '0.75rem',
-            fontWeight: 600,
-            letterSpacing: '0.18em',
-            textTransform: 'uppercase',
-            color: '#FFFFFF'
-          }}
-        >
-          Click to see more
-        </span>
-        <span
-          style={{
-            fontSize: '0.9rem',
-            color: '#FFFFFF',
-            transform: isHovered ? 'translateX(4px)' : 'translateX(0)',
-            transition: 'transform 0.3s ease'
-          }}
-        >
-          →
-        </span>
-      </div>
-
       {/* Editorial Project Text Overlay */}
       <div
         style={{
@@ -228,7 +180,7 @@ export default function ProjectSlide({
           </p>
         )}
 
-        {/* Interactive Cue */}
+        {/* Minimal Text Cue */}
         <div
           style={{
             marginTop: '12px',
@@ -243,7 +195,7 @@ export default function ProjectSlide({
             gap: '6px'
           }}
         >
-          <span>Click to see more</span>
+          <span>See More</span>
           <span
             style={{
               fontSize: '0.9rem',
