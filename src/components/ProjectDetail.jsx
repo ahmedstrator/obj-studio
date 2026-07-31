@@ -188,9 +188,9 @@ export default function ProjectDetail({ project, onBack, prefersReducedMotion })
           const isPast = index < activeMediaIndex;
           const isFuture = index > activeMediaIndex;
           const offset = index - activeMediaIndex;
-          const isMountedVideo = Math.abs(offset) <= 1;
+          const isMountedVideo = isActive;
 
-          if (Math.abs(offset) > 2) return null;
+          if (Math.abs(offset) > 1) return null;
 
           let translateY = '0%';
           let scale = 1;
@@ -348,6 +348,7 @@ function ProjectMediaItem({
               muted
               playsInline
               loop
+              preload="metadata"
               style={{
                 width: '100%',
                 height: '100%',

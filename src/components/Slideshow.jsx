@@ -126,9 +126,7 @@ export default function Slideshow({
         const isActive = index === currentIndex;
         const isPast = index < currentIndex;
         const isFuture = index > currentIndex;
-        const offset = index - currentIndex;
-
-        const isMountedVideo = Math.abs(offset) <= 1;
+        const isMountedVideo = isActive;
 
         if (Math.abs(offset) > 2) return null;
 

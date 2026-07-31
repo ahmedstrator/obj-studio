@@ -86,6 +86,7 @@ export default function ProjectSlide({
               muted
               playsInline
               loop
+              preload="metadata"
               style={{
                 width: '100%',
                 height: '100%',
