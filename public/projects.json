@@ -1,7 +1,7 @@
 {
   "studio": "OBJ Studio",
-  "totalProjects": 9,
-  "generatedAt": "2026-07-30T21:45:55.759Z",
+  "totalProjects": 8,
+  "generatedAt": "2026-07-31T01:36:28.244Z",
   "projects": [
     {
       "id": "project-1",
@@ -150,342 +150,6 @@
     {
       "id": "project-5",
       "number": "05",
-      "title": "Miami 3",
-      "year": "2025",
-      "category": "Live Concert Visuals",
-      "client": "",
-      "description": "A collection of immersive visuals created for the third edition of the Miami concert series. Built around rhythm, lighting, and cinematic motion to elevate the live audience experience.",
-      "folder": "Miami 3",
-      "media": [
-        {
-          "id": "Miami 3-DRONE_footage.mp4",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/DRONE_footage.mp4",
-          "type": "video",
-          "filename": "DRONE_footage.mp4"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC00641.jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC00641.jpg",
-          "type": "image",
-          "filename": "DSC00641.jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC00645.jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC00645.jpg",
-          "type": "image",
-          "filename": "DSC00645.jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC00648.jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC00648.jpg",
-          "type": "image",
-          "filename": "DSC00648.jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC00649.jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC00649.jpg",
-          "type": "image",
-          "filename": "DSC00649.jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC00662.jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC00662.jpg",
-          "type": "image",
-          "filename": "DSC00662.jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC00678.jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC00678.jpg",
-          "type": "image",
-          "filename": "DSC00678.jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC00698.jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC00698.jpg",
-          "type": "image",
-          "filename": "DSC00698.jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC00701.jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC00701.jpg",
-          "type": "image",
-          "filename": "DSC00701.jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC00703.jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC00703.jpg",
-          "type": "image",
-          "filename": "DSC00703.jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC00706.jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC00706.jpg",
-          "type": "image",
-          "filename": "DSC00706.jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC00711.jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC00711.jpg",
-          "type": "image",
-          "filename": "DSC00711.jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC00889.jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC00889.jpg",
-          "type": "image",
-          "filename": "DSC00889.jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC00919.jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC00919.jpg",
-          "type": "image",
-          "filename": "DSC00919.jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC01022.jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC01022.jpg",
-          "type": "image",
-          "filename": "DSC01022.jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC01024.jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC01024.jpg",
-          "type": "image",
-          "filename": "DSC01024.jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC01183.jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC01183.jpg",
-          "type": "image",
-          "filename": "DSC01183.jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC01328.jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC01328.jpg",
-          "type": "image",
-          "filename": "DSC01328.jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC01363.jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC01363.jpg",
-          "type": "image",
-          "filename": "DSC01363.jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC01497.jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC01497.jpg",
-          "type": "image",
-          "filename": "DSC01497.jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC01566.jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC01566.jpg",
-          "type": "image",
-          "filename": "DSC01566.jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC01679.jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC01679.jpg",
-          "type": "image",
-          "filename": "DSC01679.jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC01750 (1).jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC01750%20(1).jpg",
-          "type": "image",
-          "filename": "DSC01750 (1).jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC01829.jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC01829.jpg",
-          "type": "image",
-          "filename": "DSC01829.jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC01888.jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC01888.jpg",
-          "type": "image",
-          "filename": "DSC01888.jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC01985.jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC01985.jpg",
-          "type": "image",
-          "filename": "DSC01985.jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC01991.jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC01991.jpg",
-          "type": "image",
-          "filename": "DSC01991.jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC02158.jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC02158.jpg",
-          "type": "image",
-          "filename": "DSC02158.jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC02173 (1).jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC02173%20(1).jpg",
-          "type": "image",
-          "filename": "DSC02173 (1).jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC02223.JPG",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC02223.JPG",
-          "type": "image",
-          "filename": "DSC02223.JPG"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC02224.JPG",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC02224.JPG",
-          "type": "image",
-          "filename": "DSC02224.JPG"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC02359.jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC02359.jpg",
-          "type": "image",
-          "filename": "DSC02359.jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC02427.jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC02427.jpg",
-          "type": "image",
-          "filename": "DSC02427.jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC02463.jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC02463.jpg",
-          "type": "image",
-          "filename": "DSC02463.jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC02479.jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC02479.jpg",
-          "type": "image",
-          "filename": "DSC02479.jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC02480.jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC02480.jpg",
-          "type": "image",
-          "filename": "DSC02480.jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC02557.jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC02557.jpg",
-          "type": "image",
-          "filename": "DSC02557.jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC02579.jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC02579.jpg",
-          "type": "image",
-          "filename": "DSC02579.jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC02591.jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC02591.jpg",
-          "type": "image",
-          "filename": "DSC02591.jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC02603.jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC02603.jpg",
-          "type": "image",
-          "filename": "DSC02603.jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC02625.jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC02625.jpg",
-          "type": "image",
-          "filename": "DSC02625.jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC02647.jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC02647.jpg",
-          "type": "image",
-          "filename": "DSC02647.jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC02651.jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC02651.jpg",
-          "type": "image",
-          "filename": "DSC02651.jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC02722.jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC02722.jpg",
-          "type": "image",
-          "filename": "DSC02722.jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC02723.jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC02723.jpg",
-          "type": "image",
-          "filename": "DSC02723.jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC02764.jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC02764.jpg",
-          "type": "image",
-          "filename": "DSC02764.jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC02772.jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC02772.jpg",
-          "type": "image",
-          "filename": "DSC02772.jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC02808.jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC02808.jpg",
-          "type": "image",
-          "filename": "DSC02808.jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC02831.jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC02831.jpg",
-          "type": "image",
-          "filename": "DSC02831.jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC02833.jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC02833.jpg",
-          "type": "image",
-          "filename": "DSC02833.jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC02836.jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC02836.jpg",
-          "type": "image",
-          "filename": "DSC02836.jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC02841.jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC02841.jpg",
-          "type": "image",
-          "filename": "DSC02841.jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC02847.jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC02847.jpg",
-          "type": "image",
-          "filename": "DSC02847.jpg"
-        },
-        {
-          "id": "Miami 3-Stage- Management/DSC02849.jpg",
-          "url": "https://pub-4e13a14df41d4b3e8040519943a89cba.r2.dev/Miami%203/Stage-%20Management/DSC02849.jpg",
-          "type": "image",
-          "filename": "DSC02849.jpg"
-        }
-      ]
-    },
-    {
-      "id": "project-6",
-      "number": "06",
       "title": "FOMEX",
       "year": "2024",
       "category": "Exhibition Experience",
@@ -502,8 +166,8 @@
       ]
     },
     {
-      "id": "project-7",
-      "number": "07",
+      "id": "project-6",
+      "number": "06",
       "title": "Z by Zidan",
       "year": "2023",
       "category": "CGI Street Billboard",
@@ -520,8 +184,8 @@
       ]
     },
     {
-      "id": "project-8",
-      "number": "08",
+      "id": "project-7",
+      "number": "07",
       "title": "Rawa2e3 El Sunbati",
       "year": "2023",
       "category": "Live Concert Visuals",
@@ -598,8 +262,8 @@
       ]
     },
     {
-      "id": "project-9",
-      "number": "09",
+      "id": "project-8",
+      "number": "08",
       "title": "Miami 1",
       "year": "2024",
       "category": "Live Concert Visuals",

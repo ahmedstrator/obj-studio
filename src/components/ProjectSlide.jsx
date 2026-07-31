@@ -8,6 +8,7 @@ export default function ProjectSlide({
   onOpen
 }) {
   const [imageLoaded, setImageLoaded] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
   const videoRef = useRef(null);
   const imageRef = useRef(null);
 
@@ -50,6 +51,8 @@ export default function ProjectSlide({
   return (
     <div
       onClick={onOpen}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
       style={{
         position: 'relative',
         width: '100%',
@@ -75,7 +78,9 @@ export default function ProjectSlide({
           justifyContent: 'center',
           alignItems: 'center',
           overflow: 'hidden',
-          backgroundColor: '#050505'
+          backgroundColor: '#050505',
+          transform: isHovered ? 'scale(1.018)' : 'scale(1)',
+          transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)'
         }}
       >
         {coverMedia && coverMedia.type === 'video' ? (
@@ -134,12 +139,60 @@ export default function ProjectSlide({
             bottom: 0,
             left: 0,
             right: 0,
-            height: '40%',
-            background: 'linear-gradient(to top, rgba(5, 5, 5, 0.85) 0%, rgba(5, 5, 5, 0.4) 50%, transparent 100%)',
+            height: '45%',
+            background: 'linear-gradient(to top, rgba(5, 5, 5, 0.88) 0%, rgba(5, 5, 5, 0.4) 50%, transparent 100%)',
             pointerEvents: 'none',
             zIndex: 10
           }}
         />
+      </div>
+
+      {/* Floating Center Interactive Hover Pill */}
+      <div
+        style={{
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: isHovered
+            ? 'translate(-50%, -50%) scale(1)'
+            : 'translate(-50%, -40%) scale(0.92)',
+          opacity: isHovered ? 1 : 0,
+          transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
+          zIndex: 25,
+          pointerEvents: 'none',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '10px',
+          padding: '12px 24px',
+          borderRadius: '100px',
+          backgroundColor: 'rgba(5, 5, 5, 0.75)',
+          backdropFilter: 'blur(16px)',
+          WebkitBackdropFilter: 'blur(16px)',
+          border: '1px solid rgba(255, 255, 255, 0.28)',
+          boxShadow: '0 20px 45px rgba(0, 0, 0, 0.6)'
+        }}
+      >
+        <span
+          style={{
+            fontSize: '0.75rem',
+            fontWeight: 600,
+            letterSpacing: '0.18em',
+            textTransform: 'uppercase',
+            color: '#FFFFFF'
+          }}
+        >
+          Click to see more
+        </span>
+        <span
+          style={{
+            fontSize: '0.9rem',
+            color: '#FFFFFF',
+            transform: isHovered ? 'translateX(4px)' : 'translateX(0)',
+            transition: 'transform 0.3s ease'
+          }}
+        >
+          →
+        </span>
       </div>
 
       {/* Editorial Project Text Overlay */}
@@ -182,15 +235,24 @@ export default function ProjectSlide({
             fontSize: '0.75rem',
             letterSpacing: '0.15em',
             textTransform: 'uppercase',
-            color: 'var(--text-muted)',
-            opacity: 0.65,
+            color: isHovered ? 'var(--text-main)' : 'var(--text-muted)',
+            opacity: isHovered ? 1 : 0.65,
+            transition: 'color 0.3s ease, opacity 0.3s ease',
             display: 'flex',
             alignItems: 'center',
             gap: '6px'
           }}
         >
-          <span>Explore Project</span>
-          <span style={{ fontSize: '0.9rem' }}>→</span>
+          <span>Click to see more</span>
+          <span
+            style={{
+              fontSize: '0.9rem',
+              transform: isHovered ? 'translateX(4px)' : 'translateX(0)',
+              transition: 'transform 0.3s ease'
+            }}
+          >
+            →
+          </span>
         </div>
       </div>
     </div>
