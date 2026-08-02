@@ -95,16 +95,33 @@ export default function ProjectSlide({
         <AnimatePresence initial={false} mode="wait">
           <motion.div
             key={currentMediaIndex}
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={0.15}
+            onDragEnd={(e, { offset, velocity }) => {
+              const swipeThreshold = 40;
+              if (offset.x < -swipeThreshold || velocity.x < -250) {
+                if (currentMediaIndex < totalMedia - 1) {
+                  setCurrentMediaIndex((prev) => prev + 1);
+                }
+              } else if (offset.x > swipeThreshold || velocity.x > 250) {
+                if (currentMediaIndex > 0) {
+                  setCurrentMediaIndex((prev) => prev - 1);
+                }
+              }
+            }}
             initial={{ opacity: 0.8, scale: 0.98 }}
-            animate={{ opacity: 1, scale: 1 }}
+            animate={{ opacity: 1, scale: 1, x: 0 }}
             exit={{ opacity: 0.8, scale: 0.98 }}
-            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
             style={{
               width: '100%',
               height: '100%',
               display: 'flex',
               justifyContent: 'center',
-              alignItems: 'center'
+              alignItems: 'center',
+              touchAction: 'pan-y',
+              cursor: 'grab'
             }}
           >
             {currentMedia && currentMedia.type === 'video' ? (
