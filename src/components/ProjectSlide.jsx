@@ -221,23 +221,24 @@ export default function ProjectSlide({
           </>
         )}
 
-        {/* Instagram-Style Bottom Pagination Dots */}
+        {/* Instagram-Style Bottom Pagination Dots (Pinned to bottom of media container) */}
         {totalMedia > 1 && (
           <div
             style={{
               position: 'absolute',
-              bottom: 'clamp(95px, 14vh, 140px)',
+              bottom: '14px',
               left: '50%',
               transform: 'translateX(-50%)',
               display: 'flex',
               alignItems: 'center',
               gap: '6px',
-              zIndex: 25,
-              padding: '6px 12px',
+              zIndex: 30,
+              padding: '6px 14px',
               borderRadius: '20px',
-              backgroundColor: 'rgba(5, 5, 5, 0.5)',
-              backdropFilter: 'blur(8px)',
-              WebkitBackdropFilter: 'blur(8px)'
+              backgroundColor: 'rgba(5, 5, 5, 0.65)',
+              backdropFilter: 'blur(12px)',
+              WebkitBackdropFilter: 'blur(12px)',
+              border: '1px solid rgba(255, 255, 255, 0.12)'
             }}
           >
             {mediaList.map((_, idx) => (
