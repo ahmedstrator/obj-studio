@@ -48,8 +48,8 @@ export default function Preloader({ projects, onComplete }) {
   return (
     <motion.div
       initial={{ opacity: 1 }}
-      exit={{ opacity: 0, scale: 1.04 }}
-      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      exit={{ opacity: 0, scale: 1.06, filter: 'blur(12px)' }}
+      transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
       style={{
         position: 'fixed',
         top: 0,
@@ -63,7 +63,8 @@ export default function Preloader({ projects, onComplete }) {
         justifyContent: 'center',
         alignItems: 'center',
         color: '#FFFFFF',
-        userSelect: 'none'
+        userSelect: 'none',
+        willChange: 'opacity, transform, filter'
       }}
     >
       <div

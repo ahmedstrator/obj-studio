@@ -92,9 +92,18 @@ export default function App() {
         )}
       </AnimatePresence>
 
-      {/* Main Homepage Deck */}
+      {/* Main Homepage Deck with Soft Cinematic Entrance */}
       {manifest && projects.length > 0 && (
-        <>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.96, filter: 'blur(10px)' }}
+          animate={{
+            opacity: isPreloaded ? 1 : 0,
+            scale: isPreloaded ? 1 : 0.96,
+            filter: isPreloaded ? 'blur(0px)' : 'blur(10px)'
+          }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+          style={{ width: '100%', height: '100%', willChange: 'opacity, transform, filter' }}
+        >
           <Navigation
             currentIndex={currentIndex}
             totalProjects={projects.length + 1}
@@ -107,7 +116,7 @@ export default function App() {
             onOpenProject={handleOpenProject}
             prefersReducedMotion={prefersReducedMotion}
           />
-        </>
+        </motion.div>
       )}
 
       {/* Dedicated Project Detail View */}
