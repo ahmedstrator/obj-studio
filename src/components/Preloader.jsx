@@ -5,75 +5,50 @@ export default function Preloader({ projects, onComplete }) {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    if (!projects || projects.length === 0) {
-      onComplete();
-      return;
-    }
+    // 3-second smooth linear progress timer (3000ms)
+    const startTime = Date.now();
+    const DURATION = 3000;
 
-    // Preload top 3 projects (cover media)
-    const projectsToPreload = projects.slice(0, 3);
-    let loadedCount = 0;
-    const totalAssets = projectsToPreload.length;
-
-    const updateProgress = () => {
-      loadedCount++;
-      const pct = Math.min(Math.round((loadedCount / totalAssets) * 100), 100);
+    const interval = setInterval(() => {
+      const elapsed = Date.now() - startTime;
+      const pct = Math.min(Math.round((elapsed / DURATION) * 100), 100);
       setProgress(pct);
-      if (loadedCount >= totalAssets) {
+
+      if (pct >= 100) {
+        clearInterval(interval);
         setTimeout(onComplete, 400);
       }
-    };
+    }, 30);
 
-    // Safety timeout: maximum 2.2 seconds loading screen so user is never stuck
-    const safetyTimeout = setTimeout(() => {
-      setProgress(100);
-      setTimeout(onComplete, 300);
-    }, 2200);
+    // Concurrently pre-buffer top 3 projects
+    if (projects && projects.length > 0) {
+      const projectsToPreload = projects.slice(0, 3);
+      projectsToPreload.forEach((proj) => {
+        const mediaList = proj.media && proj.media.length > 0 ? proj.media : [];
+        mediaList.forEach((media) => {
+          if (media.type === 'image') {
+            const img = new Image();
+            img.src = media.url;
+            if ('decode' in img) img.decode().catch(() => {});
+          } else if (media.type === 'video') {
+            const vid = document.createElement('video');
+            vid.src = media.url;
+            vid.muted = true;
+            vid.preload = 'auto';
+            vid.playsInline = true;
+            vid.load();
+          }
+        });
+      });
+    }
 
-    projectsToPreload.forEach((proj) => {
-      const mediaList = proj.media && proj.media.length > 0 ? proj.media : [];
-      const coverMedia = mediaList.find((m) => m.type === 'video') || mediaList[0];
-
-      if (!coverMedia) {
-        updateProgress();
-        return;
-      }
-
-      if (coverMedia.type === 'image') {
-        const img = new Image();
-        img.src = coverMedia.url;
-        if ('decode' in img) {
-          img.decode().then(updateProgress).catch(updateProgress);
-        } else {
-          img.onload = updateProgress;
-          img.onerror = updateProgress;
-        }
-      } else if (coverMedia.type === 'video') {
-        const vid = document.createElement('video');
-        vid.src = coverMedia.url;
-        vid.muted = true;
-        vid.preload = 'auto';
-        vid.playsInline = true;
-
-        const handleCanPlay = () => {
-          vid.removeEventListener('loadeddata', handleCanPlay);
-          vid.removeEventListener('error', handleCanPlay);
-          updateProgress();
-        };
-
-        vid.addEventListener('loadeddata', handleCanPlay);
-        vid.addEventListener('error', handleCanPlay);
-        vid.load();
-      }
-    });
-
-    return () => clearTimeout(safetyTimeout);
+    return () => clearInterval(interval);
   }, [projects, onComplete]);
 
   return (
     <motion.div
       initial={{ opacity: 1 }}
-      exit={{ opacity: 0, scale: 1.02 }}
+      exit={{ opacity: 0, scale: 1.04 }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       style={{
         position: 'fixed',
@@ -96,56 +71,63 @@ export default function Preloader({ projects, onComplete }) {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          gap: '24px'
+          gap: '28px'
         }}
       >
         {/* Studio Branding */}
-        <div
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
           style={{
             fontSize: 'clamp(1.8rem, 4vw, 2.8rem)',
             fontWeight: 700,
-            letterSpacing: '0.3em',
+            letterSpacing: '0.35em',
             textTransform: 'uppercase',
-            color: '#FFFFFF'
+            color: '#FFFFFF',
+            textShadow: '0 0 20px rgba(255, 255, 255, 0.2)'
           }}
         >
           OBJ STUDIO
-        </div>
+        </motion.div>
 
-        {/* Minimal Progress Bar */}
+        {/* Minimal Glowing Progress Bar */}
         <div
           style={{
-            width: '140px',
+            width: '180px',
             height: '2px',
-            backgroundColor: 'rgba(255, 255, 255, 0.12)',
+            backgroundColor: 'rgba(255, 255, 255, 0.1)',
             borderRadius: '2px',
             overflow: 'hidden',
             position: 'relative'
           }}
         >
           <motion.div
-            animate={{ width: `${progress}%` }}
-            transition={{ duration: 0.3, ease: 'easeOut' }}
             style={{
+              width: `${progress}%`,
               height: '100%',
               backgroundColor: '#FFFFFF',
-              borderRadius: '2px'
+              borderRadius: '2px',
+              boxShadow: '0 0 10px rgba(255, 255, 255, 0.8)'
             }}
           />
         </div>
 
         {/* Percentage Counter HUD */}
-        <div
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3, duration: 0.6 }}
           style={{
             fontSize: '0.75rem',
             fontVariantNumeric: 'tabular-nums',
-            letterSpacing: '0.2em',
-            color: 'rgba(255, 255, 255, 0.5)',
+            letterSpacing: '0.22em',
+            color: 'rgba(255, 255, 255, 0.55)',
             textTransform: 'uppercase'
           }}
         >
-          PRELOADING WORK — {String(progress).padStart(2, '0')}%
-        </div>
+          INITIALIZING GALLERY — {String(progress).padStart(2, '0')}%
+        </motion.div>
       </div>
     </motion.div>
   );
