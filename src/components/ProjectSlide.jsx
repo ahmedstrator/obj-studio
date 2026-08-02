@@ -115,7 +115,7 @@ export default function ProjectSlide({
                 style={{
                   width: '100%',
                   height: '100%',
-                  objectFit: 'cover',
+                  objectFit: 'contain',
                   backgroundColor: '#050505'
                 }}
               />
@@ -128,7 +128,7 @@ export default function ProjectSlide({
                 style={{
                   width: '100%',
                   height: '100%',
-                  objectFit: 'cover'
+                  objectFit: 'contain'
                 }}
               />
             ) : null}
@@ -205,7 +205,7 @@ export default function ProjectSlide({
           <div
             style={{
               position: 'absolute',
-              bottom: '120px',
+              bottom: '100px',
               left: '50%',
               transform: 'translateX(-50%)',
               display: 'flex',
@@ -254,20 +254,19 @@ export default function ProjectSlide({
         />
       </div>
 
-      {/* Editorial Text Overlay */}
+      {/* Editorial Gallery Text Overlay */}
       <div
-        onClick={onOpen}
         style={{
           position: 'absolute',
-          bottom: 'max(28px, env(safe-area-inset-bottom))',
-          left: 'max(28px, env(safe-area-inset-left))',
-          right: 'max(28px, env(safe-area-inset-right))',
+          bottom: 'max(24px, env(safe-area-inset-bottom))',
+          left: 'max(24px, env(safe-area-inset-left))',
+          right: 'max(24px, env(safe-area-inset-right))',
           maxWidth: '680px',
           zIndex: 20,
+          pointerEvents: 'none',
           display: 'flex',
           flexDirection: 'column',
-          gap: '8px',
-          cursor: 'pointer'
+          gap: '6px'
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
@@ -296,27 +295,10 @@ export default function ProjectSlide({
         </h2>
 
         {project.description && (
-          <p className="font-description" style={{ marginTop: '4px' }}>
+          <p className="font-description" style={{ marginTop: '2px' }}>
             {project.description}
           </p>
         )}
-
-        <div
-          style={{
-            marginTop: '8px',
-            fontSize: '0.75rem',
-            letterSpacing: '0.15em',
-            textTransform: 'uppercase',
-            color: 'var(--text-muted)',
-            opacity: 0.85,
-            display: 'flex',
-            alignItems: 'center',
-            gap: '6px'
-          }}
-        >
-          <span>See Full Presentation</span>
-          <span style={{ fontSize: '0.9rem' }}>→</span>
-        </div>
       </div>
     </div>
   );
