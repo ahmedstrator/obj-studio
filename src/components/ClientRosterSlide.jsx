@@ -48,23 +48,21 @@ export default function ClientRosterSlide({ isActive }) {
       />
 
       {/* Large Cinematic Background Watermark */}
-      <div
+      <img
+        src="/obj-logo.png"
+        alt="OBJ Watermark"
         style={{
           position: 'absolute',
           top: '50%',
           left: '50%',
           transform: 'translate(-50%, -50%)',
-          fontSize: 'clamp(14rem, 30vw, 32rem)',
-          fontWeight: 800,
-          letterSpacing: '0.1em',
-          color: 'rgba(255, 255, 255, 0.02)',
+          width: 'clamp(280px, 45vw, 600px)',
+          height: 'auto',
+          opacity: 0.035,
           pointerEvents: 'none',
-          zIndex: 1,
-          lineHeight: 1
+          zIndex: 1
         }}
-      >
-        OBJ
-      </div>
+      />
 
       {/* Main Content Box */}
       <div

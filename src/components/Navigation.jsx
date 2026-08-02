@@ -34,18 +34,16 @@ export default function Navigation({ currentIndex, totalProjects }) {
           width: '100%'
         }}
       >
-        <span 
-          style={{
-            fontSize: '0.85rem',
-            fontWeight: 600,
-            letterSpacing: '0.25em',
-            textTransform: 'uppercase',
-            color: 'var(--text-main)',
-            opacity: 0.9
-          }}
-        >
-          OBJ
-        </span>
+        <img 
+          src="/obj-logo.png" 
+          alt="OBJ Studio" 
+          style={{ 
+            height: '20px', 
+            width: 'auto', 
+            display: 'block', 
+            opacity: 0.95 
+          }} 
+        />
 
         {/* 01 / 09 Counter */}
         <div 

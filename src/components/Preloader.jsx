@@ -75,21 +75,19 @@ export default function Preloader({ projects, onComplete }) {
         }}
       >
         {/* Studio Branding */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
+        <motion.img
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
+          src="/obj-logo.png"
+          alt="OBJ Studio"
           style={{
-            fontSize: 'clamp(2rem, 5vw, 3.2rem)',
-            fontWeight: 700,
-            letterSpacing: '0.4em',
-            textTransform: 'uppercase',
-            color: '#FFFFFF',
-            textShadow: '0 0 25px rgba(255, 255, 255, 0.25)'
+            height: 'clamp(36px, 7vw, 60px)',
+            width: 'auto',
+            display: 'block',
+            filter: 'drop-shadow(0 0 20px rgba(255, 255, 255, 0.25))'
           }}
-        >
-          OBJ
-        </motion.div>
+        />
 
         {/* Minimal Glowing Progress Bar */}
         <div
