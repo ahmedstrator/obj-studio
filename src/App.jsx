@@ -97,7 +97,7 @@ export default function App() {
         <>
           <Navigation
             currentIndex={currentIndex}
-            totalProjects={projects.length}
+            totalProjects={projects.length + 1}
           />
           
           <Slideshow

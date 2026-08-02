@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import ProjectSlide from './ProjectSlide.jsx';
+import ClientRosterSlide from './ClientRosterSlide.jsx';
 
 export default function Slideshow({
   projects,
@@ -14,7 +15,7 @@ export default function Slideshow({
   const isCooldown = useRef(false);
   const touchStartY = useRef(0);
 
-  const total = projects.length;
+  const total = projects.length + 1; // 8 projects + 1 Client Roster slide
 
   const goToNext = () => {
     if (currentIndex < total - 1) {
@@ -69,7 +70,7 @@ export default function Slideshow({
       } else if (['ArrowUp', 'ArrowLeft', 'PageUp'].includes(e.key)) {
         e.preventDefault();
         goToPrev();
-      } else if (e.key === 'Enter') {
+      } else if (e.key === 'Enter' && currentIndex < projects.length) {
         onOpenProject(currentIndex);
       }
     };
@@ -108,6 +109,12 @@ export default function Slideshow({
     ease: [0.16, 1, 0.3, 1]
   };
 
+  // Combine project slides + 1 client roster slide
+  const allSlides = [
+    ...projects.map((p) => ({ type: 'project', data: p })),
+    { type: 'roster', id: 'client-roster' }
+  ];
+
   return (
     <div
       ref={containerRef}
@@ -122,7 +129,7 @@ export default function Slideshow({
         touchAction: 'none'
       }}
     >
-      {projects.map((project, index) => {
+      {allSlides.map((slide, index) => {
         const isActive = index === currentIndex;
         const isPast = index < currentIndex;
         const isFuture = index > currentIndex;
@@ -130,36 +137,6 @@ export default function Slideshow({
         const isMountedVideo = offset === 0 || offset === 1;
 
         if (Math.abs(offset) > 2) return null;
-
-        if (prefersReducedMotion) {
-          return (
-            <motion.div
-              key={project.id}
-              initial={false}
-              animate={{
-                opacity: isActive ? 1 : 0,
-                pointerEvents: isActive ? 'auto' : 'none'
-              }}
-              transition={fadeTransition}
-              style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '100%',
-                willChange: 'opacity'
-              }}
-            >
-              <ProjectSlide
-                project={project}
-                isActive={isActive}
-                isMountedVideo={isMountedVideo}
-                prefersReducedMotion={true}
-                onOpen={() => onOpenProject(index)}
-              />
-            </motion.div>
-          );
-        }
 
         let translateY = '0%';
         let scale = 1;
@@ -185,14 +162,14 @@ export default function Slideshow({
 
         return (
           <motion.div
-            key={project.id}
+            key={slide.id || slide.data?.id}
             initial={false}
             animate={{
               y: translateY,
               scale: scale,
               opacity: opacity
             }}
-            transition={springTransition}
+            transition={prefersReducedMotion ? fadeTransition : springTransition}
             style={{
               position: 'absolute',
               top: 0,
@@ -204,13 +181,17 @@ export default function Slideshow({
               willChange: 'transform, opacity'
             }}
           >
-            <ProjectSlide
-              project={project}
-              isActive={isActive}
-              isMountedVideo={isMountedVideo}
-              prefersReducedMotion={false}
-              onOpen={() => onOpenProject(index)}
-            />
+            {slide.type === 'project' ? (
+              <ProjectSlide
+                project={slide.data}
+                isActive={isActive}
+                isMountedVideo={isMountedVideo}
+                prefersReducedMotion={prefersReducedMotion}
+                onOpen={() => onOpenProject(index)}
+              />
+            ) : (
+              <ClientRosterSlide isActive={isActive} />
+            )}
           </motion.div>
         );
       })}
