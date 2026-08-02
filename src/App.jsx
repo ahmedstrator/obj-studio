@@ -3,12 +3,14 @@ import { AnimatePresence } from 'framer-motion';
 import Slideshow from './components/Slideshow.jsx';
 import Navigation from './components/Navigation.jsx';
 import ProjectDetail from './components/ProjectDetail.jsx';
+import Preloader from './components/Preloader.jsx';
 
 export default function App() {
   const [manifest, setManifest] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedProject, setSelectedProject] = useState(null);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const [isPreloaded, setIsPreloaded] = useState(false);
   const [error, setError] = useState(null);
 
   // Load projects.json manifest on initialization
@@ -67,27 +69,7 @@ export default function App() {
     );
   }
 
-  if (!manifest || !manifest.projects || manifest.projects.length === 0) {
-    return (
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          height: '100dvh',
-          backgroundColor: '#050505',
-          color: 'var(--text-muted)',
-          fontSize: '0.85rem',
-          letterSpacing: '0.2em',
-          textTransform: 'uppercase'
-        }}
-      >
-        OBJ Studio
-      </div>
-    );
-  }
-
-  const projects = manifest.projects;
+  const projects = manifest && manifest.projects ? manifest.projects : [];
 
   return (
     <main
@@ -99,21 +81,36 @@ export default function App() {
         overflow: 'hidden'
       }}
     >
-      {/* Homepage Selector View */}
-      <Navigation
-        currentIndex={currentIndex}
-        totalProjects={projects.length}
-      />
-      
-      <Slideshow
-        projects={projects}
-        currentIndex={currentIndex}
-        onIndexChange={setCurrentIndex}
-        onOpenProject={handleOpenProject}
-        prefersReducedMotion={prefersReducedMotion}
-      />
+      {/* Studio Preloader Overlay */}
+      <AnimatePresence>
+        {!isPreloaded && (
+          <Preloader
+            key="studio-preloader"
+            projects={projects}
+            onComplete={() => setIsPreloaded(true)}
+          />
+        )}
+      </AnimatePresence>
 
-      {/* Dedicated Project Detail Presentation View */}
+      {/* Main Homepage Deck */}
+      {manifest && projects.length > 0 && (
+        <>
+          <Navigation
+            currentIndex={currentIndex}
+            totalProjects={projects.length}
+          />
+          
+          <Slideshow
+            projects={projects}
+            currentIndex={currentIndex}
+            onIndexChange={setCurrentIndex}
+            onOpenProject={handleOpenProject}
+            prefersReducedMotion={prefersReducedMotion}
+          />
+        </>
+      )}
+
+      {/* Dedicated Project Detail View */}
       <AnimatePresence>
         {selectedProject && (
           <ProjectDetail
