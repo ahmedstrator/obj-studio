@@ -32,7 +32,7 @@ export default function Preloader({ projects, onComplete }) {
 
     projectsToPreload.forEach((proj) => {
       const mediaList = proj.media && proj.media.length > 0 ? proj.media : [];
-      const coverMedia = mediaList.find((m) => m.type === 'image') || mediaList[0];
+      const coverMedia = mediaList.find((m) => m.type === 'video') || mediaList[0];
 
       if (!coverMedia) {
         updateProgress();
