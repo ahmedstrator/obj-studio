@@ -12,9 +12,8 @@ export default function ProjectSlide({
   const videoRef = useRef(null);
   const imageRef = useRef(null);
 
-  const mediaList = project.media && project.media.length > 0 ? project.media : [];
-  // Use first video if available, otherwise first image as hero cover media
-  const coverMedia = mediaList.find((m) => m.type === 'video') || mediaList[0];
+  // Use cover image for homepage slide card ('Outside' view) so NO heavy video buffering occurs upfront
+  const coverMedia = mediaList.find((m) => m.type === 'image') || mediaList[0];
 
   // Handle active video playback control
   useEffect(() => {
@@ -91,6 +90,7 @@ export default function ProjectSlide({
               muted
               playsInline
               loop
+              preload="none"
               style={{
                 width: '100%',
                 height: '100%',
