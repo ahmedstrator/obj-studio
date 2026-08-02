@@ -44,10 +44,7 @@ function parseDisplayOrder(content) {
   for (const line of lines) {
     const match = line.match(/^\d+\.\s*(.+)/);
     if (match) {
-      const itemTitle = match[1].trim();
-      if (itemTitle.toLowerCase() !== 'miami 3') {
-        orderList.push(itemTitle);
-      }
+      orderList.push(match[1].trim());
     }
   }
   return orderList;
