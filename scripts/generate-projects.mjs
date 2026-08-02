@@ -139,8 +139,11 @@ function matchTitleToFolder(title, folders) {
     'riyadhmetro': 'Metro riyadh',
     'onebillionsummit': 'One billion summit',
     'fomex': 'FOMEX',
-    'miami1': 'Miami 1',
-    'miami3': 'Miami 3'
+    'miamivol.1&3': 'Miami Vol.1 and 3',
+    'miamivol1&3': 'Miami Vol.1 and 3',
+    'miamivol1and3': 'Miami Vol.1 and 3',
+    'miami1': 'Miami Vol.1 and 3',
+    'miami3': 'Miami Vol.1 and 3'
   };
 
   if (explicitMap[normTitle]) {
