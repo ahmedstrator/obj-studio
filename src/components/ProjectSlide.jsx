@@ -85,7 +85,11 @@ export default function ProjectSlide({
           justifyContent: 'center',
           alignItems: 'center',
           overflow: 'hidden',
-          backgroundColor: '#050505'
+          backgroundColor: '#050505',
+          paddingTop: 'clamp(48px, 7vh, 72px)',
+          paddingBottom: 'clamp(130px, 18vh, 180px)',
+          paddingLeft: 'clamp(16px, 4vw, 40px)',
+          paddingRight: 'clamp(16px, 4vw, 40px)'
         }}
       >
         <AnimatePresence initial={false} mode="wait">
@@ -205,7 +209,7 @@ export default function ProjectSlide({
           <div
             style={{
               position: 'absolute',
-              bottom: '100px',
+              bottom: 'clamp(95px, 14vh, 140px)',
               left: '50%',
               transform: 'translateX(-50%)',
               display: 'flex',

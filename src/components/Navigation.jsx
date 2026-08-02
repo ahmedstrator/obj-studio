@@ -61,8 +61,9 @@ export default function Navigation({ currentIndex, totalProjects }) {
         </div>
       </div>
 
-      {/* Thin Vertical Progress Indicator on Right Edge */}
+      {/* Thin Vertical Progress Indicator on Right Edge (Hidden on mobile to avoid overlap) */}
       <div 
+        className="mobile-hide"
         style={{
           position: 'fixed',
           right: 'clamp(16px, 3vw, 32px)',

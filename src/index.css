@@ -71,14 +71,14 @@
 
 /* Dynamic typography rules */
 .font-project-title {
-  font-size: clamp(2rem, 5vw, 4.5rem);
+  font-size: clamp(1.4rem, 4.5vw, 4.5rem);
   font-weight: 500;
-  line-height: 1.05;
+  line-height: 1.1;
   letter-spacing: -0.02em;
 }
 
 .font-category {
-  font-size: clamp(0.75rem, 1.2vw, 0.9rem);
+  font-size: clamp(0.7rem, 1.2vw, 0.9rem);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.15em;
@@ -86,23 +86,38 @@
 }
 
 .font-description {
-  font-size: clamp(0.85rem, 1.3vw, 1.05rem);
+  font-size: clamp(0.78rem, 1.3vw, 1.05rem);
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.45;
   color: var(--text-muted);
   max-width: 480px;
 }
 
 .font-year {
-  font-size: clamp(0.8rem, 1.2vw, 0.95rem);
+  font-size: clamp(0.75rem, 1.2vw, 0.95rem);
   font-weight: 400;
   letter-spacing: 0.05em;
   color: var(--text-faint);
 }
 
 .font-counter {
-  font-size: clamp(0.8rem, 1.1vw, 0.95rem);
+  font-size: clamp(0.75rem, 1.1vw, 0.95rem);
   font-weight: 500;
   letter-spacing: 0.1em;
   color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+  .font-project-title {
+    font-size: clamp(1.3rem, 5vw, 2.2rem);
+  }
+  .font-description {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .mobile-hide {
+    display: none !important;
+  }
 }
