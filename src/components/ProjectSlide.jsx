@@ -86,8 +86,8 @@ export default function ProjectSlide({
           alignItems: 'center',
           overflow: 'hidden',
           backgroundColor: '#050505',
-          paddingTop: 'clamp(48px, 7vh, 72px)',
-          paddingBottom: 'clamp(130px, 18vh, 180px)',
+          paddingTop: 'clamp(52px, 8vh, 80px)',
+          paddingBottom: 'clamp(150px, 22vh, 220px)',
           paddingLeft: 'clamp(16px, 4vw, 40px)',
           paddingRight: 'clamp(16px, 4vw, 40px)'
         }}
@@ -279,7 +279,7 @@ export default function ProjectSlide({
       <div
         style={{
           position: 'absolute',
-          bottom: 'max(24px, env(safe-area-inset-bottom))',
+          bottom: 'max(32px, env(safe-area-inset-bottom))',
           left: 'max(24px, env(safe-area-inset-left))',
           right: 'max(24px, env(safe-area-inset-right))',
           maxWidth: '680px',

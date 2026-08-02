@@ -80,15 +80,15 @@ export default function Preloader({ projects, onComplete }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
           style={{
-            fontSize: 'clamp(1.8rem, 4vw, 2.8rem)',
+            fontSize: 'clamp(2rem, 5vw, 3.2rem)',
             fontWeight: 700,
-            letterSpacing: '0.35em',
+            letterSpacing: '0.4em',
             textTransform: 'uppercase',
             color: '#FFFFFF',
-            textShadow: '0 0 20px rgba(255, 255, 255, 0.2)'
+            textShadow: '0 0 25px rgba(255, 255, 255, 0.25)'
           }}
         >
-          OBJ STUDIO
+          OBJ
         </motion.div>
 
         {/* Minimal Glowing Progress Bar */}
